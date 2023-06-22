@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/22 20:31:44 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/22 20:36:10 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 char	*get_next_line(int fd)
 {
 	
+}
+
+int	main(void)
+{
+	int		fd;
+	char	*line;
+
+	line = "";
+	fd = open("test.txt", O_RDONLY);
+	while (line)
+	{
+		line = get_next_line(fd);
+		printf("> %s", line);
+		free(line);
+	}
+	return (0);
 }
 
 // sample site:
