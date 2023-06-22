@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/22 20:36:10 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/22 21:03:53 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,3 @@ int	main(void)
 	}
 	return (0);
 }
-
-// sample site:
-// https://zenn.dev/tkoyasak/articles/69ac9d00cf2018
