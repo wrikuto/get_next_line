@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/26 22:49:38 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/27 17:57:06 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ char	*ft_read(int fd, char *buf)
 	int		read_byte;
 
 	read_byte = 1;
-	but_size = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	buf_size = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (buf_size == NULL)
+		return (NULL);
+	while ()
 }
 
 char	*get_next_line(int fd)
@@ -33,6 +36,8 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = 
 }
+
+//
 
 int	main(void)
 {
