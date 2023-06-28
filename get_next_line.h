@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:28:55 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/27 16:06:22 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/28 16:48:08 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@
 # endif
 
 size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *str, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_is_new(char	*buf);
+char	*ft_new_sentence(char	*buf);
+char	*ft_newbuf(char	*buf);
+
+
 
 #endif

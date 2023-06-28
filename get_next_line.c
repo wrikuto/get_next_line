@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/27 17:57:06 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/28 18:05:32 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,58 @@
 
 char	*ft_read(int fd, char *buf)
 {
-	char	*buf_size;
+	char	*read_buf;
 	int		read_byte;
 
 	read_byte = 1;
-	buf_size = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (buf_size == NULL)
+	read_buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (read_buf == NULL)
 		return (NULL);
-	while ()
+	while (ft_is_new(buf) != NULL && read_byte != 0)
+	{
+		read_byte = read(fd, read_buf, BUFFER_SIZE);
+		if (read_byte <= -1)
+		{
+			free(buf);
+			free(read_buf);
+			return (NULL);
+		}
+		buf_size[read_byte] = '\0';
+		buf = ft_strjoin(buf, read_buf);
+	}
+	free(read_buf);
+	return (buf);
 }
 
 char	*get_next_line(int fd)
 {
 	static char	*buf;
-	char		*line;
+	char		*sentence;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	buf = ft_read(fd, buf);
 	if (buf == NULL)
 		return (NULL);
-	line = 
+	sentence = ft_new_sentence(buf);
+	buf = ft_newbuf(buf);
+	return (sentence);
 }
 
-//
+// --------------------------------
 
-int	main(void)
-{
-	int		fd;
-	char	*line;
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*line;
 
-	line = "";
-	fd = open("test.txt", O_RDONLY);
-	while (line)
-	{
-		line = get_next_line(fd);
-		printf("> %s", line);
-		free(line);
-	}
-	return (0);
-}
+// 	line = "";
+// 	fd = open("test.txt", O_RDONLY);
+// 	while (line)
+// 	{
+// 		line = get_next_line(fd);
+// 		printf("> %s", line);
+// 		free(line);
+// 	}
+// 	return (0);
+// }

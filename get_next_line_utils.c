@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:38:15 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/27 20:47:15 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/28 17:40:42 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (res);
 }
 
-int	ft_is_newline(char	*buf)
+// This func checks if the sentence stored in buf contains a character '\n'.
+// if it does, it returns 1.
+int	ft_is_new(char	*buf)
 {
 	int	i;
 
 	i = -1;
-	if (buf == NULL || buf[i] == NULL)
-		return (NULL);
+	if (buf == NULL || buf[i] == '\0')
+		return (0);
 	while (buf[i] != '\n')
 		i++;
 	if (buf[i] == '\n')
@@ -64,6 +66,7 @@ int	ft_is_newline(char	*buf)
 	return (0);
 }
 
+// This func create new sentence from buf.
 char	*ft_new_sentence(char	*buf)
 {
 	char	*sentence;
@@ -73,8 +76,8 @@ char	*ft_new_sentence(char	*buf)
 
 	i = 0;
 	j = 0;
-	is_new = ft_is_newline(buf);
-	if (buf == NULL || buf[i] == NULL)
+	is_new = ft_is_new(buf);
+	if (buf == NULL || buf[i] == '\0')
 		return (NULL);
 	while (buf[i] != NULL && buf[i] != '\n')
 		i++;
@@ -90,12 +93,12 @@ char	*ft_new_sentence(char	*buf)
 	return (sentence);
 }
 
-char	*new_buf(char	*buf)
+// This func
+char	*ft_newbuf(char	*buf)
 {
 	char	*new_buf;
 	int		i;
 	int		j;
-	int		bufsize;
 
 	i = 0;
 	j = 0;
@@ -106,6 +109,13 @@ char	*new_buf(char	*buf)
 		free (buf);
 		return (NULL);
 	}
-	bufsize = strlen(buf);
-	new_buf = malloc(sizeof(char) * (bufsize - i + 1));
+	new_buf = malloc(sizeof(char) * (ft_strlen(buf) - i + 1));
+	if (new_buf == NULL)
+		return (NULL);
+	i++;
+	while (buf[i] != NULL)
+		new_buf[j++] = buf[i++];
+	new_buf[j] = '\0';
+	free(buf);
+	return (new_buf);
 }
