@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:38:15 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/28 17:40:42 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/28 19:27:27 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,10 @@ char	*ft_new_sentence(char	*buf)
 	is_new = ft_is_new(buf);
 	if (buf == NULL || buf[i] == '\0')
 		return (NULL);
-	while (buf[i] != NULL && buf[i] != '\n')
+	while (buf[i] != '\0' && buf[i] != '\n')
 		i++;
 	sentence = malloc(sizeof(char) * (i + is_new + 1));
-	while (buf[i] != NULL && buf[i] != '\n')
+	while (buf[i] != '\0' && buf[i] != '\n')
 	{
 		sentence[i] = buf[i];
 		i++;
@@ -102,9 +102,9 @@ char	*ft_newbuf(char	*buf)
 
 	i = 0;
 	j = 0;
-	while (buf[i] != NULL && buf[i] != '\n')
+	while (buf[i] != '\0' && buf[i] != '\n')
 		i++;
-	if (buf == NULL || buf[i] == NULL)
+	if (buf == NULL || buf[i] == '\0')
 	{
 		free (buf);
 		return (NULL);
