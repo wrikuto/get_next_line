@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/28 20:47:33 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/28 21:06:38 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,16 @@ char	*ft_read(int fd, char *buf)
 char	*get_next_line(int fd)
 {
 	static char	*buf;
-	char		*sentence;
+	char		*rtn_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	buf = ft_read(fd, buf);
 	if (buf == NULL)
 		return (NULL);
-	sentence = ft_new_sentence(buf);
-	buf = ft_newbuf(buf);
-	return (sentence);
+	rtn_line = ft_rtn_sentence(buf);
+	buf = ft_nextbuf(buf);
+	return (rtn_line);
 }
 
 // --------------------------------

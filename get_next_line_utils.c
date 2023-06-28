@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:38:15 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/28 19:27:27 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/28 21:06:51 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_is_new(char	*buf)
 }
 
 // This func create new sentence from buf.
-char	*ft_new_sentence(char	*buf)
+char	*ft_rtn_sentence(char	*buf)
 {
 	char	*sentence;
 	int		i;
@@ -94,14 +94,13 @@ char	*ft_new_sentence(char	*buf)
 }
 
 // This func
-char	*ft_newbuf(char	*buf)
+char	*ft_nextbuf(char	*buf)
 {
 	char	*new_buf;
 	int		i;
 	int		j;
 
 	i = 0;
-	j = 0;
 	while (buf[i] != '\0' && buf[i] != '\n')
 		i++;
 	if (buf == NULL || buf[i] == '\0')
@@ -113,6 +112,7 @@ char	*ft_newbuf(char	*buf)
 	if (new_buf == NULL)
 		return (NULL);
 	i++;
+	j = 0;
 	while (buf[i] != NULL)
 		new_buf[j++] = buf[i++];
 	new_buf[j] = '\0';
