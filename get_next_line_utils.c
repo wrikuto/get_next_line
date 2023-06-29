@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:38:15 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/29 20:37:27 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/29 21:03:06 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,33 +64,6 @@ int	ft_is_newline(char	*buf)
 		return (1);
 	return (0);
 }
-
-// char	*ft_rtn_line(char	*buf)
-// {
-// 	char	*rtn_line;
-// 	int		i;
-// 	int		j;
-// 	int		is_new;
-
-// 	i = 0;
-// 	j = 0;
-// 	is_new = ft_is_newline(buf);
-// 	printf(" //TEST_is: %d\n", is_new);
-// 	if (buf[i] == 0)
-// 		return (NULL);
-// 	while (buf[i] != '\0' && buf[i] != '\n')
-// 		i++;
-// 	rtn_line = malloc(sizeof(char) * (i + is_new + 1));
-// 	while (buf[j] != '\0' && buf[j] != '\n')
-// 	{
-// 		rtn_line[j] = buf[j];
-// 		j++;
-// 	}
-// 	if (buf[j] == '\n')
-// 		rtn_line[j + 1] = '\n';
-// 	rtn_line[j] = '\0';
-// 	return (rtn_line);
-// }
 
 char	*ft_rtn_line(char	*buf)
 {

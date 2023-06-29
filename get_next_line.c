@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/29 20:31:42 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/29 20:57:54 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,23 +63,9 @@ int	main(void)
 	while (line)
 	{
 		line = get_next_line(fd);
-		printf("> %s", line);
+		printf("%s", line);
 		free(line);
 	}
+	printf("\n");
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*line = NULL;
-
-// 	fd = open("test.txt", O_RDONLY);
-// 	line = ft_read(fd, line);
-
-// 	printf("%s\n", line);
-// 	free(line);
-
-// 	close(fd);
-// 	return (0);
-// }
