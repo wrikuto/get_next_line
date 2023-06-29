@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/28 21:06:38 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/29 11:00:49 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ char	*get_next_line(int fd)
 	buf = ft_read(fd, buf);
 	if (buf == NULL)
 		return (NULL);
-	rtn_line = ft_rtn_sentence(buf);
-	buf = ft_nextbuf(buf);
+	rtn_line = ft_rtn_line(buf);
+	buf = ft_to_nextline(buf);
 	return (rtn_line);
 }
 

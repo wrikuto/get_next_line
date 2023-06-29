@@ -6,13 +6,13 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:38:15 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/28 21:06:51 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/29 11:00:45 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+static size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -50,9 +50,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (res);
 }
 
-// This func checks if the sentence stored in buf contains a character '\n'.
-// if it does, it returns 1.
-int	ft_is_new(char	*buf)
+int	ft_is_newline(char	*buf)
 {
 	int	i;
 
@@ -66,44 +64,42 @@ int	ft_is_new(char	*buf)
 	return (0);
 }
 
-// This func create new sentence from buf.
-char	*ft_rtn_sentence(char	*buf)
+char	*ft_rtn_line(char	*buf)
 {
-	char	*sentence;
+	char	*rtn_line;
 	int		i;
 	int		j;
 	int		is_new;
 
 	i = 0;
 	j = 0;
-	is_new = ft_is_new(buf);
-	if (buf == NULL || buf[i] == '\0')
+	is_new = ft_is_newline(buf);
+	if (buf[i] == 0)
 		return (NULL);
 	while (buf[i] != '\0' && buf[i] != '\n')
 		i++;
-	sentence = malloc(sizeof(char) * (i + is_new + 1));
+	rtn_line = malloc(sizeof(char) * (i + is_new + 1));
 	while (buf[i] != '\0' && buf[i] != '\n')
 	{
-		sentence[i] = buf[i];
+		rtn_line[i] = buf[i];
 		i++;
 	}
 	if (buf[i] == '\n')
-		sentence[i + 1] = '\n';
-	sentence[i] = '\0';
-	return (sentence);
+		rtn_line[i + 1] = '\n';
+	rtn_line[i] = '\0';
+	return (rtn_line);
 }
 
-// This func
-char	*ft_nextbuf(char	*buf)
+char	*ft_to_nextline(char	*buf)
 {
 	char	*new_buf;
 	int		i;
 	int		j;
 
 	i = 0;
-	while (buf[i] != '\0' && buf[i] != '\n')
+	while (buf[i] != 0 && buf[i] != '\n')
 		i++;
-	if (buf == NULL || buf[i] == '\0')
+	if (buf == NULL || buf[i] == NULL)
 	{
 		free (buf);
 		return (NULL);
