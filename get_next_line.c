@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/29 20:57:54 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/29 21:09:39 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ int	main(void)
 		printf("%s", line);
 		free(line);
 	}
-	printf("\n");
+	printf("fin\n");
 	return (0);
 }
