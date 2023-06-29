@@ -6,13 +6,14 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/29 11:00:49 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/29 20:31:42 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"get_next_line.h"
+#include<stdio.h>
 
-char	*ft_read(int fd, char *buf)
+static	char	*ft_read_and_concatenate(int fd, char *buf)
 {
 	char	*read_buf;
 	int		read_byte;
@@ -21,10 +22,10 @@ char	*ft_read(int fd, char *buf)
 	read_buf = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (read_buf == NULL)
 		return (NULL);
-	while (!ft_is_new(buf) && read_byte != 0)
+	while (ft_is_newline(buf) != 1 && read_byte != 0)
 	{
 		read_byte = read(fd, read_buf, BUFFER_SIZE);
-		if (read_byte <= -1)
+		if (read_byte < 0)
 		{
 			free(buf);
 			free(read_buf);
@@ -44,7 +45,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	buf = ft_read(fd, buf);
+	buf = ft_read_and_concatenate(fd, buf);
 	if (buf == NULL)
 		return (NULL);
 	rtn_line = ft_rtn_line(buf);
@@ -52,20 +53,33 @@ char	*get_next_line(int fd)
 	return (rtn_line);
 }
 
-// --------------------------------
+int	main(void)
+{
+	int		fd;
+	char	*line;
+
+	line = "";
+	fd = open("test.txt", O_RDONLY);
+	while (line)
+	{
+		line = get_next_line(fd);
+		printf("> %s", line);
+		free(line);
+	}
+	return (0);
+}
 
 // int	main(void)
 // {
 // 	int		fd;
-// 	char	*line;
+// 	char	*line = NULL;
 
-// 	line = "";
 // 	fd = open("test.txt", O_RDONLY);
-// 	while (line)
-// 	{
-// 		line = get_next_line(fd);
-// 		printf("> %s", line);
-// 		free(line);
-// 	}
+// 	line = ft_read(fd, line);
+
+// 	printf("%s\n", line);
+// 	free(line);
+
+// 	close(fd);
 // 	return (0);
 // }
