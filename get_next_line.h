@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:28:55 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/30 13:52:29 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/30 17:49:54 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include<stdlib.h>
 # include<stddef.h>
 # include<fcntl.h>
-# include<limits.h> 
+# include<limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
