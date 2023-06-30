@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:28:55 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/30 11:25:46 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/30 13:33:36 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@
 # include<unistd.h>
 # include<stdlib.h>
 # include<stddef.h>
-# include <fcntl.h>
+# include<fcntl.h>
+# include<limits.h> 
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 256
 # endif
 
+size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
-int		ft_is_newline(char	*buf);
-char	*ft_rtn_line(char	*buf);
-char	*ft_to_nextline(char	*buf);
+char	*ft_strjoin(char *s1, char *s2);
+
 
 #endif
