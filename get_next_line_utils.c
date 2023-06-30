@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:38:15 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/30 13:53:50 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/30 19:42:11 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[j] != 0)
 		res[i++] = s2[j++];
 	res[i] = '\0';
+	if (s1)
+		free(s1);
 	return (res);
 }
