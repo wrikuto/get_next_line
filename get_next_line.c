@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/30 13:29:24 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/30 13:54:02 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static char	*ft_rtn_line(char	*buf)
 	while (buf[count] != '\0' && buf[count] != '\n')
 		count++;
 	rtn_line = malloc(sizeof(char) * (count + ft_is_newline(buf) + 1));
+	if (rtn_line == NULL)
+		return (NULL);
 	while (buf[asg] != '\0' && buf[asg] != '\n')
 	{
 		rtn_line[asg] = buf[asg];
@@ -75,7 +77,6 @@ static char	*ft_to_nextline(char	*buf)
 	free(buf);
 	return (new_buf);
 }
-
 
 static	char	*ft_read_and_concatenate(int fd, char *buf)
 {
@@ -117,21 +118,21 @@ char	*get_next_line(int fd)
 	return (rtn_line);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	int		fd;
-	char	*line;
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*line;
 
-	line = "";
-	fd = open("test.txt", O_RDONLY);
-	while (line)
-	{
-		line = get_next_line(fd);
-		printf("%s", line);
-		free(line);
-	}
-	printf("\n");
-	return (0);
-}
+// 	line = "";
+// 	fd = open("test.txt", O_RDONLY);
+// 	while (line)
+// 	{
+// 		line = get_next_line(fd);
+// 		printf("%s", line);
+// 		free(line);
+// 	}
+// 	printf("\n");
+// 	return (0);
+// }
