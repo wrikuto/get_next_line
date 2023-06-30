@@ -6,14 +6,11 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:38:15 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/29 21:03:06 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/30 11:25:29 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"get_next_line.h"
-
-#include<stdio.h>
-
 
 static size_t	ft_strlen(const char *s)
 {

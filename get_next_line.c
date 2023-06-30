@@ -6,12 +6,11 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/29 21:09:39 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/30 11:25:27 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"get_next_line.h"
-#include<stdio.h>
 
 static	char	*ft_read_and_concatenate(int fd, char *buf)
 {
@@ -66,6 +65,6 @@ int	main(void)
 		printf("%s", line);
 		free(line);
 	}
-	printf("fin\n");
+	printf("\n");
 	return (0);
 }

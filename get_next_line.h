@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:28:55 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/06/29 17:26:29 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/06/30 11:25:46 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ char	*ft_strjoin(char *s1, char *s2);
 int		ft_is_newline(char	*buf);
 char	*ft_rtn_line(char	*buf);
 char	*ft_to_nextline(char	*buf);
-
-
 
 #endif
