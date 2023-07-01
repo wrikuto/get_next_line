@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/07/01 16:58:36 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/07/01 16:59:31 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,21 +118,21 @@ char	*get_next_line(int fd)
 	return (rtn_line);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	int		fd;
-	char	*line;
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*line;
 
-	line = "";
-	fd = open("test.txt", O_RDONLY);
-	while (line)
-	{
-		line = get_next_line(fd);
-		printf("%s", line);
-		free(line);
-	}
-	printf("\n");
-	return (0);
-}
+// 	line = "";
+// 	fd = open("test.txt", O_RDONLY);
+// 	while (line)
+// 	{
+// 		line = get_next_line(fd);
+// 		printf("%s", line);
+// 		free(line);
+// 	}
+// 	printf("\n");
+// 	return (0);
+// }
