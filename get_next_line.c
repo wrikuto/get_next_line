@@ -6,7 +6,7 @@
 /*   By: wrikuto <wrikuto@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 20:17:59 by wrikuto           #+#    #+#             */
-/*   Updated: 2023/07/01 16:59:31 by wrikuto          ###   ########.fr       */
+/*   Updated: 2023/07/01 17:37:31 by wrikuto          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,11 @@ char	*get_next_line(int fd)
 // 		free(line);
 // 	}
 // 	printf("\n");
+// 	free(line);
 // 	return (0);
+// }
+
+// __attribute__((destructor))
+// static void destructor() {
+//     system("leaks -q a.out");
 // }
